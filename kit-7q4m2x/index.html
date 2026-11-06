@@ -102,14 +102,34 @@ footer a{color:var(--muted-d)}
 .toc a:hover{background:var(--ink-3)}
 .bonus-label{display:inline-block;background:var(--gold-2);color:var(--gold-ink);font-weight:900;font-size:.8rem;border-radius:999px;padding:2px 12px;margin-bottom:8px}
 </style>
-</head>
+<style>
+:root{--ink:#FBF4F7;--ink-2:#F3E5EC;--ink-3:#FFFFFF;--text-d:#2A1B34;--muted-d:#5C4859;--soft-d:#7E6A7B;--line:rgba(168,80,111,.25);--hd:#1F0F1A;--acc:#A8506F;color-scheme:light}
+h1,h2,h3,.price,.hook,.hooks span,ol.steps b,.feat strong,summary,.win .qt,.calc label,.review .mail,.calc input{color:var(--hd)}
+.g,.brand,.ctaline,.hooks small,.note b,.out b,.stats b,.toc a,.chip{color:var(--acc)}
+.chip{border-color:rgba(168,80,111,.45)}
+.copy{border-color:var(--acc);color:var(--acc)}.copy:hover{background:var(--acc);color:#fff}
+.cta:focus-visible,.copy:focus-visible{outline-color:var(--hd)}
+.card,.win,.calc,.hooks li,ol.steps li,.stats div,.note,details{box-shadow:0 6px 20px -14px rgba(80,30,55,.35)}
+.paid{background:#1F7A4D;color:#fff;font-weight:800;text-align:center;padding:12px 16px;font-size:1.05rem}
+.paid span{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:#fff;color:#1F7A4D;margin-left:6px;font-weight:900}
+.welcome{background:linear-gradient(180deg,#F3E5EC,#FBF4F7)}
+ol.start{list-style:none;margin:22px auto 0;padding:0;display:grid;gap:10px;max-width:520px;text-align:right;counter-reset:st}
+ol.start li{counter-increment:st;display:grid;grid-template-columns:34px 1fr;column-gap:12px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 16px}
+ol.start li::before{content:counter(st);grid-row:span 2;width:30px;height:30px;border-radius:50%;background:var(--acc);color:#fff;display:grid;place-items:center;font-weight:900}
+ol.start b{color:var(--hd)}ol.start span{color:var(--muted-d);font-size:.92rem}
+</style></head>
 <body>
 
-<section class="sec center"><div class="wrap">
-<span class="brand">יומן מלא</span>
-<h1>ערכת <span class="g">המודעות</span> לקליניקה</h1>
-<p class="lead">מה עובד בפרסום קליניקות בישראל, כמה מותר לך לשלם על פנייה, ובדיקה אישית של המודעה שלך.</p>
-<p class="intro" style="margin-top:14px">שמרי את הקישור לעמוד הזה, כדי לחזור אליו מתי שתרצי.</p>
+<div class="paid" role="status"><span aria-hidden="true">✓</span> הרכישה הושלמה. זו הערכה שלך.</div>
+<section class="sec center welcome"><div class="wrap">
+<span class="brand">יומן מלא · אזור אישי</span>
+<h1>ברוכה הבאה <span class="g">לערכה שלך</span></h1>
+<p class="lead">הכול כאן, ואפשר לחזור לדף הזה מתי שתרצי.</p>
+<ol class="start">
+<li><b>שלחי לי את המודעה שלך</b><span>לבדיקה אישית, תוך 48 שעות בימי עבודה</span></li>
+<li><b>מלאי את מחשבון התקציב</b><span>כדי לדעת כמה מותר לך לשלם על פנייה</span></li>
+<li><b>בחרי מודעה מוכנה</b><span>ותתחילי לפרסם</span></li>
+</ol>
 <nav class="toc" aria-label="תוכן הערכה"><a href="#review">בדיקה אישית</a><a href="#wins">המודעות שעובדות</a><a href="#calc">מחשבון תקציב</a><a href="#steps">צ'קליסט</a><a href="#bonus">בונוס: מודעות מוכנות</a></nav>
 </div></section>
 <section class="sec alt" id="review"><div class="wrap"><div class="review">
