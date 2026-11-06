@@ -65,26 +65,137 @@ details p{margin:8px 0 0;color:var(--muted-d)}
 footer{padding:28px 18px;text-align:center;color:var(--soft-d);font-size:.9rem;background:var(--ink)}
 footer a{color:var(--muted-d)}
 </style>
+<style>
+.review{background:linear-gradient(160deg,var(--ink-3),var(--ink-2));border:2px solid var(--gold-2);border-radius:20px;padding:24px;text-align:center;display:flex;flex-direction:column;gap:10px;align-items:center}
+.review .mail{direction:ltr;font-weight:800;color:#fff;background:var(--ink);border:1px solid var(--line);border-radius:10px;padding:8px 14px;user-select:all}
+.review ul{list-style:none;padding:0;margin:0;text-align:right;display:grid;gap:6px;color:var(--text-d)}
+.review li::before{content:"✓ ";color:var(--gold-2);font-weight:900}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:0 0 22px}
+@media(max-width:560px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.stats div{background:var(--ink-3);border:1px solid var(--line);border-radius:14px;padding:14px 10px;text-align:center}
+.stats b{display:block;font-family:var(--serif);font-size:1.9rem;color:var(--gold-2);line-height:1.1;font-variant-numeric:tabular-nums}
+.stats span{font-size:.88rem;color:var(--muted-d);line-height:1.4;display:block}
+.win{background:var(--ink-3);border:1px solid var(--line);border-radius:16px;padding:18px;text-align:right;display:grid;gap:8px;min-width:0}
+.win-top{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between}
+.win .age{font-size:.85rem;color:var(--muted-d)}
+.win .qt{display:block;font-family:var(--serif);font-size:1.12rem;color:#fff;margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:.78rem;font-weight:700;border:1px solid var(--line);color:var(--gold-2);border-radius:999px;padding:1px 10px}
+.why{color:var(--muted-d);font-size:.95rem;margin:0}
+.why b{color:var(--text-d)}
+.calc{background:var(--ink-3);border:1px solid var(--line);border-radius:18px;padding:22px;display:grid;gap:18px}
+.calc .in{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+@media(max-width:560px){.calc .in{grid-template-columns:1fr}}
+.calc label{display:grid;gap:6px;font-weight:700;color:#fff;text-align:right;font-size:.95rem}
+.calc label small{font-weight:400;color:var(--muted-d)}
+.calc input{font:700 1.1rem var(--sans);background:var(--ink);color:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 12px;width:100%;font-variant-numeric:tabular-nums}
+.calc input:focus{outline:2px solid var(--gold-2);outline-offset:1px}
+.out{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+@media(max-width:560px){.out{grid-template-columns:1fr}}
+.out div{background:var(--ink);border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center}
+.out b{display:block;font-family:var(--serif);font-size:1.8rem;color:var(--gold-2);font-variant-numeric:tabular-nums;line-height:1.2}
+.out span{font-size:.9rem;color:var(--muted-d)}
+.out .main{grid-column:1/-1;border-color:var(--gold-2)}
+.out .main b{font-size:2.4rem}
+.toc{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:22px}
+.toc a{color:var(--gold-2);border:1px solid var(--line);border-radius:999px;padding:4px 14px;text-decoration:none;font-weight:700;font-size:.92rem}
+.toc a:hover{background:var(--ink-3)}
+.bonus-label{display:inline-block;background:var(--gold-2);color:var(--gold-ink);font-weight:900;font-size:.8rem;border-radius:999px;padding:2px 12px;margin-bottom:8px}
+</style>
 </head>
 <body>
 
 <section class="sec center"><div class="wrap">
 <span class="brand">יומן מלא</span>
 <h1>ערכת <span class="g">המודעות</span> לקליניקה</h1>
-<p class="lead">10 מודעות מוכנות, 10 הוקים, הודעות מענה אוטומטי וצ'קליסט להעלאת קמפיין.<br>מעתיקים, משנים מחיר ועיר, ומעלים.</p>
-<p class="intro" style="margin-top:18px">שמרי את הקישור לעמוד הזה, כדי לחזור אליו מתי שתרצי.</p>
-<div class="note"><b>לפני שמתחילים:</b> בכל מקום שכתוב [מחיר] או [עיר], שימי את המחיר והאזור שלך. המודעות בנויות לפי 4 הדברים שמשותפים למודעות שרצות חודשים: הצעה אחת במחיר אחד, פנייה לאזור, הורדת חשש והובלה לשיחה.</div>
+<p class="lead">מה עובד בפרסום קליניקות בישראל, כמה מותר לך לשלם על פנייה, ובדיקה אישית של המודעה שלך.</p>
+<p class="intro" style="margin-top:14px">שמרי את הקישור לעמוד הזה, כדי לחזור אליו מתי שתרצי.</p>
+<nav class="toc" aria-label="תוכן הערכה"><a href="#review">בדיקה אישית</a><a href="#wins">המודעות שעובדות</a><a href="#calc">מחשבון תקציב</a><a href="#steps">צ'קליסט</a><a href="#bonus">בונוס: מודעות מוכנות</a></nav>
+</div></section>
+<section class="sec alt" id="review"><div class="wrap"><div class="review">
+<span class="bonus-label">כלול בערכה</span>
+<h2 style="margin:0">בדיקה אישית <span class="g">של המודעה שלך</span></h2>
+<p class="intro" style="margin:0">שלחי לי צילום מסך של המודעה (או של הקמפיין), ותוך 48 שעות בימי עבודה תקבלי ממני במייל 3 תיקונים מדויקים לקליניקה שלך.</p>
+<span class="mail">ido@yoman-male.com</span>
+<ul>
+<li>בנושא המייל: "בדיקה אישית"</li>
+<li>צרפי צילום מסך של המודעה, ואם יש, גם של נתוני הקמפיין</li>
+<li>כתבי מה הטיפול, כמה הוא עולה, ובאיזה אזור הקליניקה</li>
+</ul>
+<p class="why" style="text-align:center">בדיקה אחת לכל רכישה.</p>
+</div></div></section>
+<section class="sec" id="wins"><div class="wrap">
+<div class="center"><h2>17 מודעות <span class="g">שרצות הכי הרבה זמן</span></h2>
+<p class="intro">מודעות אמיתיות של קליניקות בישראל, פעילות בספריית המודעות של מטא נכון ל-6.11.2026. אף אחת לא ממשיכה לשלם חודשים ושנים על מודעה שלא מביאה לקוחות. שמות העסקים הוסרו והציטוטים קוצרו.</p></div>
+<div class="stats">
+<div><b>13/17</b><span>פונות לעיר או לאזור</span></div>
+<div><b>8/17</b><span>כותבות מחיר במודעה</span></div>
+<div><b>11/17</b><span>מובילות לוואטסאפ או להודעה</span></div>
+<div><b>7/17</b><span>מורידות חשש: בלי התחייבות או ייעוץ חינם</span></div>
+</div>
+<div class="cards"><article class="win"><div class="win-top"><span class="tag">הסרת שיער · אשקלון</span><span class="age">רצה כבר 2 שנים ו-10 חודשים</span></div>
+<p class="qt">"רק 199 ש"ח! הסרת שיער בלייזר - אשקלון. חזה+בטן/גב+כתפיים + אזור קטן מתנה. ללא חובת התחייבות וללא תשלום מראש!"</p><div class="chips"><span class="chip">מחיר</span><span class="chip">אזור</span><span class="chip">בלי סיכון</span></div><p class="why"><b>מחיר אחד, עיר אחת, מתנה אחת.</b> אותה מודעה רצה כמעט שלוש שנים, בכמה גרסאות. הכותרת על התמונה חוזרת על המחיר והעיר.</p></article>
+<article class="win"><div class="win-top"><span class="tag">איפור קבוע · רמת גן</span><span class="age">רצה כבר 2 שנים ו-8 חודשים</span></div>
+<p class="qt">"הטבה לתושבות רמת גן! איפור גבות קבוע… רק ב-400₪ לטיפול. ל-10 הראשונות בלבד שמגיעות דרך מודעה זו"</p><div class="chips"><span class="chip">מחיר</span><span class="chip">אזור</span><span class="chip">וואטסאפ</span></div><p class="why"><b>אזור בשורה הראשונה, מחיר, ומגבלה אמיתית</b> (10 ראשונות). הכפתור פותח וואטסאפ, לא טופס.</p></article>
+<article class="win"><div class="win-top"><span class="tag">גבות פודרה · מרכז</span><span class="age">רצה כבר 2 שנים ו-1 חודשים</span></div>
+<p class="qt">"הדגשת גבות… ניתן לקבוע ייעוץ אליי באופן אישי ללא עלות. לשריון מקום… שלחי הודעה בוואטסאפ"</p><div class="chips"><span class="chip">בלי סיכון</span><span class="chip">וואטסאפ</span></div><p class="why"><b>בלי מחיר, אבל עם צעד ראשון בלי סיכון:</b> ייעוץ חינם. רצה שנתיים.</p></article>
+<article class="win"><div class="win-top"><span class="tag">טיפול פנים RF · אשדוד</span><span class="age">רצה כבר שנה ו-10 חודשים</span></div>
+<p class="qt">"סנטר כפול… פיגמנטציה… עור רפוי… זה הטיפול המושלם בשבילך! רק 150 ש״ח 🎉 ובנוסף מתנה: רפלקסולוגיה"</p><div class="chips"><span class="chip">מחיר</span><span class="chip">אזור</span><span class="chip">וואטסאפ</span></div><p class="why"><b>רשימת כאבים שהלקוחה מזהה בעצמה,</b> ואז מחיר נמוך ומתנה.</p></article>
+<article class="win"><div class="win-top"><span class="tag">הסרת שיער · נהריה</span><span class="age">רצה כבר שנה ו-9 חודשים</span></div>
+<p class="qt">"טיפולי הסרת שיער בלייזר בנהריה… ידית קרח – ללא כאב וללא כוויות… בואו לנסות טיפול בודד או להצטרף לסדרה"</p><div class="chips"><span class="chip">אזור</span><span class="chip">בלי סיכון</span><span class="chip">וואטסאפ</span></div><p class="why"><b>מוריד את שני החששות הגדולים:</b> כאב, והתחייבות לסדרה. עיר בשורה הראשונה.</p></article>
+<article class="win"><div class="win-top"><span class="tag">איפור קבוע · ראשון לציון</span><span class="age">רצה כבר שנה ו-5 חודשים</span></div>
+<p class="qt">"השיטה הנושמת לא צועקת "עשיתי גבות", היא לוחשת "נולדתי ככה". עכשיו במחיר מיוחד, כולל הרמת ריסים מתנה. לסוגרות תור השבוע!"</p><div class="chips"><span class="chip">אזור</span><span class="chip">וואטסאפ</span></div><p class="why"><b>משפט שמנסח את הפחד של הלקוחה</b> (גבות שנראות מלאכותיות), מתנה, ודדליין קצר.</p></article>
+<article class="win"><div class="win-top"><span class="tag">טיפול פנים · גן יבנה</span><span class="age">רצה כבר שנה ו-4 חודשים</span></div>
+<p class="qt">"סיום טיפול קלאסי, לקוחה מהממת שהגיעה אליי כדי להחזיר את האור לעור. במיוחד עכשיו בחופש הגדול…"</p><div class="chips"><span class="chip">אזור</span><span class="chip">וואטסאפ</span></div><p class="why"><b>נראית כמו פוסט ולא כמו מודעה.</b> סיפור קצר מהקליניקה ותזמון לעונה.</p></article>
+<article class="win"><div class="win-top"><span class="tag">עיצוב גבות · מרכז</span><span class="age">רצה כבר שנה ו-4 חודשים</span></div>
+<p class="qt">"קבעי תור עוד היום לייעוץ, ואשרטט לך סקיצה של הגבות החדשות שלך."</p><div class="chips"><span class="chip">בלי סיכון</span><span class="chip">וואטסאפ</span></div><p class="why"><b>הצעה קטנה ומוחשית:</b> סקיצה בחינם. הלקוחה רואה תוצאה לפני שהיא מחליטה.</p></article>
+<article class="win"><div class="win-top"><span class="tag">איפור קבוע · חולון</span><span class="age">רצה כבר שנה ו-3 חודשים</span></div>
+<p class="qt">"גבות דלילות ובהירות יכולות לתת מראה עייף… לכל מי שמאסה בלצייר גבות כל בוקר."</p><div class="chips"><span class="chip">אזור</span><span class="chip">וואטסאפ</span></div><p class="why"><b>מתחילה מהבעיה, לא מהטיפול.</b> כתובת מלאה בסוף המודעה.</p></article>
+<article class="win"><div class="win-top"><span class="tag">הסרת שיער · ראשון לציון</span><span class="age">רצה כבר שנה ו-2 חודשים</span></div>
+<p class="qt">"רק ב-249₪ לכל הגוף, לנשים בלבד! ללא התחייבות לסדרת טיפולים! מותאם לכל סוגי העור, כולל עור שזוף"</p><div class="chips"><span class="chip">מחיר</span><span class="chip">אזור</span><span class="chip">בלי סיכון</span><span class="chip">וואטסאפ</span></div><p class="why"><b>כל ארבעת הסימנים ביחד:</b> מחיר, אזור, בלי התחייבות, וואטסאפ. עונה מראש על "זה מתאים לעור שלי?".</p></article>
+<article class="win"><div class="win-top"><span class="tag">טיפול אקנה · באר שבע</span><span class="age">רצה כבר שנה ו-1 חודשים</span></div>
+<p class="qt">"סובלת מאקנה? הגיע הזמן לשינוי! פצעונים, אדמומיות וצלקות משפיעים לא רק על מראה העור, אלא גם על הביטחון העצמי."</p><div class="chips"><span class="chip">אזור</span><span class="chip">וואטסאפ</span></div><p class="why"><b>שאלה על הכאב בשורה הראשונה,</b> ומיד אחריה הכאב הרגשי, לא רק הטכני.</p></article>
+<article class="win"><div class="win-top"><span class="tag">הסרת שיער · קרית ים</span><span class="age">רצה כבר שנה</span></div>
+<p class="qt">"הסרת שיער בלייזר שלא דומה לשום דבר שהכרת! שלחי הודעה עכשיו ובדקי זמינות להטבה – כל הגוף רק ב-300 ₪"</p><div class="chips"><span class="chip">מחיר</span><span class="chip">אזור</span><span class="chip">וואטסאפ</span></div><p class="why"><b>"בדקי זמינות" במקום "קבעי תור".</b> צעד קטן יותר, שמזמין הודעה.</p></article>
+<article class="win"><div class="win-top"><span class="tag">הסרת שיער · אשקלון</span><span class="age">רצה כבר 11 חודשים</span></div>
+<p class="qt">"טיפול היכרות לכל הגוף רק 349 ש"ח! נשים: ידיים+רגליים+בית שחי+מפשעות"</p><div class="chips"><span class="chip">מחיר</span><span class="chip">אזור</span></div><p class="why"><b>"טיפול היכרות"</b> ופירוט בדיוק מה נכלל. אין שאלות פתוחות.</p></article>
+<article class="win"><div class="win-top"><span class="tag">טיפול פנים · מכון ביתי</span><span class="age">רצה כבר 10 חודשים</span></div>
+<p class="qt">"טיפול פנים מותאם אישית, עם ניסיון של מעל 20 שנה, יחס חם ואווירה נעימה."</p><div class="chips"></div><p class="why"><b>היתרון של מכון קטן הוא האישי:</b> ותק, יחס חם. לא מתחרה ברשתות על מחיר.</p></article>
+<article class="win"><div class="win-top"><span class="tag">הסרת שיער · אילת</span><span class="age">רצה כבר 9 חודשים</span></div>
+<p class="qt">"אילתיות, אם אתן סובלות משיער באזור הפנים והעורף, הפוסט הזה בשבילכן! פגישת ייעוץ חינם"</p><div class="chips"><span class="chip">אזור</span><span class="chip">בלי סיכון</span></div><p class="why"><b>פונה בשם לתושבות העיר,</b> ולבעיה אחת ספציפית (פנים ועורף).</p></article>
+<article class="win"><div class="win-top"><span class="tag">הסרת שיער · עצמאית</span><span class="age">רצה כבר 6 חודשים</span></div>
+<p class="qt">"הגיע הזמן להפסיק לסבול מאדמומיות, גירויים ופצעי גילוח. משלמת רק על הטיפול עצמו, בלי התחייבות. מפשעות + בית שחי 150 ש"ח"</p><div class="chips"><span class="chip">מחיר</span><span class="chip">בלי סיכון</span></div><p class="why"><b>מתחילה מהסבל של הגילוח,</b> לא מהלייזר. מחיר לאזור אחד, שקל להגיד עליו כן.</p></article>
+<article class="win"><div class="win-top"><span class="tag">טיפול פנים · מודיעין</span><span class="age">רצה כבר 6 חודשים</span></div>
+<p class="qt">"תושבות מודיעין והסביבה!! שמרגישות שעור הפנים כבר לא צעיר כמו פעם… טיפול פנים מפנק רק ב-249ש״ח"</p><div class="chips"><span class="chip">מחיר</span><span class="chip">אזור</span></div><p class="why"><b>העיר בשורה הראשונה, הכאב בשנייה, המחיר בכותרת.</b> מבנה פשוט שקל להעתיק.</p></article></div>
+<div class="note" style="margin-top:22px"><b>מה לקחת מזה:</b> הן לא מספרות על הקליניקה. הן פונות לאזור, אומרות מחיר אחד, מורידות חשש אחד, ומבקשות צעד קטן: הודעה.</div>
 </div></section>
 <section class="sec alt"><div class="wrap">
-<div class="center"><h2>10 מודעות <span class="g">מוכנות</span></h2><p class="intro">לכל מודעה כפתור העתקה. מדביקים במנהל המודעות ומשנים רק את מה שבסוגריים.</p></div>
-<div class="cards" id="ads"></div></div></section>
-<section class="sec"><div class="wrap">
-<div class="center"><h2>10 הוקים <span class="g">להחלפה</span></h2><p class="intro">ההוק הוא המשפט הראשון, וגם המשפט שעל התמונה. כשמודעה מפסיקה להביא פניות, לא מחליפים את כל המודעה. מחליפים רק את ההוק.</p></div>
-<ul class="hooks" id="hooks"></ul></div></section>
-<section class="sec alt"><div class="wrap">
-<div class="center"><h2>הודעות <span class="g">מענה אוטומטי</span></h2><p class="intro">בוואטסאפ עסקי: הגדרות ← כלים לעסקים ← הודעת פתיחה / הודעת היעדרות. פנייה שמחכה שעה כבר קובעת אצל מישהי אחרת.</p></div>
-<div class="cards" id="replies"></div></div></section>
-<section class="sec"><div class="wrap">
+<div class="center"><h2>מחשבון <span class="g">תקציב</span></h2><p class="intro">כמה מותר לך לשלם על פנייה, ומתי לכבות מודעה. משנים את המספרים, והתוצאה מתעדכנת.</p></div>
+<div class="calc" id="calc">
+<div class="in">
+<label for="c-price">מחיר טיפול ראשון (₪)<input id="c-price" type="number" inputmode="numeric" min="0" value="249"></label>
+<label for="c-visits">כמה טיפולים לקוחה עושה בממוצע<small>לייזר: לרוב 6–8. טיפול פנים: כמה פעמים בשנה.</small><input id="c-visits" type="number" inputmode="numeric" min="1" value="6"></label>
+<label for="c-close">מתוך 10 פניות, כמה קובעות תור<small>אם אין לך מספר, תתחילי מ-3.</small><input id="c-close" type="number" inputmode="numeric" min="0" max="10" value="3"></label>
+<label for="c-budget">תקציב פרסום ליום (₪)<input id="c-budget" type="number" inputmode="numeric" min="0" value="40"></label>
+</div>
+<div class="out">
+<div class="main"><b id="o-target">–</b><span>היעד שלך לעלות פנייה. עד הסכום הזה, הטיפול הראשון כבר מחזיר את הפרסום.</span></div>
+<div><b id="o-kill">–</b><span>מודעה שהוציאה את הסכום הזה בלי אף פנייה: לכבות</span></div>
+<div><b id="o-max">–</b><span>התקרה: מעל זה, גם לקוחה קבועה לא מחזירה את הפרסום</span></div>
+<div><b id="o-leads">–</b><span>פניות צפויות בשבוע, אם עומדים ביעד</span></div>
+<div><b id="o-clients">–</b><span>לקוחות חדשות צפויות בשבוע</span></div>
+</div>
+</div>
+<script>
+(function(){const $=i=>document.getElementById(i);const f=n=>isFinite(n)&&n>0?Math.round(n).toLocaleString('he-IL'):'–';
+function run(){const p=+$('c-price').value||0,v=Math.max(1,+$('c-visits').value||1),c=Math.min(10,Math.max(0,+$('c-close').value||0))/10,b=+$('c-budget').value||0;
+const target=p*c,max=p*v*c,leads=target>0?b*7/target:0;
+$('o-target').textContent=target>0?f(target)+' ₪':'–';$('o-kill').textContent=target>0?f(target*2)+' ₪':'–';$('o-max').textContent=max>0?f(max)+' ₪':'–';
+$('o-leads').textContent=leads>0?(leads<10?leads.toFixed(1):f(leads)):'–';const cl=leads*c;$('o-clients').textContent=cl>0?(cl<10?cl.toFixed(1):f(cl)):'–'}
+['c-price','c-visits','c-close','c-budget'].forEach(i=>$(i).addEventListener('input',run));run()})();
+</script>
+</div></section>
+<section class="sec" id="steps"><div class="wrap">
 <div class="center"><h2>צ'קליסט <span class="g">להעלאת קמפיין</span></h2><p class="intro">10 צעדים, לפי הסדר.</p></div>
 <ol class="steps"><li><span><b>מטרת קמפיין: הודעות (Engagement ← Messaging) לוואטסאפ.</b>הפנייה מגיעה ישר אלייך, בלי טופס.</span></li>
 <li><span><b>מיקום: רדיוס 10–15 ק"מ סביב הקליניקה.</b>לא כל הארץ. לקוחה לא תיסע שעה לטיפול פנים.</span></li>
@@ -96,9 +207,18 @@ footer a{color:var(--muted-d)}
 <li><span><b>לא לגעת 3–4 ימים.</b>כל שינוי מאפס את הלמידה של מטא.</span></li>
 <li><span><b>מודעה שהוציאה סכום של 2–3 טיפולים בלי אף פנייה: לכבות.</b>את התקציב מעבירים למודעה שעובדת.</span></li>
 <li><span><b>כשהתדירות (Frequency) עוברת 2–2.5: להחליף הוק.</b>זה הסימן שאותן נשים רואות את המודעה שוב ושוב.</span></li></ol></div></section>
-<section class="sec alt center"><div class="wrap stack">
+<section class="sec alt" id="bonus"><div class="wrap">
+<div class="center"><span class="bonus-label">בונוס</span><h2>10 מודעות <span class="g">מוכנות</span></h2><p class="intro">בנויות לפי מה שעובד במודעות שלמעלה. לכל מודעה כפתור העתקה. משנים רק את מה שבסוגריים.</p></div>
+<div class="cards" id="ads"></div></div></section>
+<section class="sec"><div class="wrap">
+<div class="center"><span class="bonus-label">בונוס</span><h2>10 הוקים <span class="g">להחלפה</span></h2><p class="intro">כשמודעה מפסיקה להביא פניות, לא מחליפים את כל המודעה. מחליפים רק את המשפט הראשון.</p></div>
+<ul class="hooks" id="hooks"></ul></div></section>
+<section class="sec alt"><div class="wrap">
+<div class="center"><span class="bonus-label">בונוס</span><h2>הודעות <span class="g">מענה אוטומטי</span></h2><p class="intro">בוואטסאפ עסקי: הגדרות ← כלים לעסקים ← הודעת פתיחה / הודעת היעדרות.</p></div>
+<div class="cards" id="replies"></div></div></section>
+<section class="sec center"><div class="wrap stack">
 <h2>אין לך זמן <span class="g">לעשות את זה לבד?</span></h2>
-<p class="intro" style="margin:0">ב"30 יום ליומן מלא" אני בונה ומנהל לך את כל מה שבערכה: קמפיין, מודעות, מענה אוטומטי ודוח שבועי. עני "יומן מלא" לאחד המיילים שלי, ואחזור אלייך.</p>
+<p class="intro" style="margin:0">ב"30 יום ליומן מלא" אני בונה ומנהל לך את כל זה: קמפיין, מודעות, מענה אוטומטי ודוח שבועי. עני "יומן מלא" לאחד המיילים שלי, ואחזור אלייך.</p>
 </div></section>
 <footer>יומן מלא – עידו ביטון · עוסק מורשה 200352623 · <a href="https://yoman-male.com/#terms">תקנון</a> · <a href="https://yoman-male.com/#privacy">מדיניות פרטיות</a></footer>
 <script>
