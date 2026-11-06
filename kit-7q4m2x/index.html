@@ -117,6 +117,12 @@ ol.start{list-style:none;margin:22px auto 0;padding:0;display:grid;gap:10px;max-
 ol.start li{counter-increment:st;display:grid;grid-template-columns:34px 1fr;column-gap:12px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 16px}
 ol.start li::before{content:counter(st);grid-row:span 2;width:30px;height:30px;border-radius:50%;background:var(--acc);color:#fff;display:grid;place-items:center;font-weight:900}
 ol.start b{color:var(--hd)}ol.start span{color:var(--muted-d);font-size:.92rem}
+
+.mailme{max-width:520px;margin:20px auto 0;background:#fff;border:2px solid var(--acc);border-radius:16px;padding:16px;text-align:center}
+.mailme label{display:grid;gap:2px;margin-bottom:10px}.mailme label b{color:var(--hd);font-size:1.05rem}.mailme label span{color:var(--muted-d);font-size:.9rem}
+.mailme .row{display:flex;gap:8px}.mailme input{flex:1;min-width:0;font:600 1rem var(--sans);border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:#FBF4F7;color:var(--hd)}
+.mailme button{font:800 1rem var(--sans);background:var(--acc);color:#fff;border:0;border-radius:10px;padding:10px 18px;cursor:pointer}.mailme button:disabled{opacity:.6}
+.mailme .msg{margin:8px 0 0;font-size:.92rem;color:var(--hd);min-height:1em}.mailme.done .row{display:none}.mailme.done{border-color:#1F7A4D}
 </style></head>
 <body>
 
@@ -130,6 +136,23 @@ ol.start b{color:var(--hd)}ol.start span{color:var(--muted-d);font-size:.92rem}
 <li><b>מלאי את מחשבון התקציב</b><span>כדי לדעת כמה מותר לך לשלם על פנייה</span></li>
 <li><b>בחרי מודעה מוכנה</b><span>ותתחילי לפרסם</span></li>
 </ol>
+<form class="mailme" id="mailme" novalidate>
+<label for="mm-email"><b>שלחי לי את הקישור לערכה במייל</b><span>כדי שלא תאבדי אותה</span></label>
+<div class="row"><input id="mm-email" type="email" autocomplete="email" dir="ltr" placeholder="המייל שלך" required><button type="submit">שלחו לי</button></div>
+<p class="msg" id="mm-msg" role="status" aria-live="polite"></p>
+</form>
+<script>
+(function(){var f=document.getElementById('mailme'),m=document.getElementById('mm-msg'),e=document.getElementById('mm-email');
+f.addEventListener('submit',function(ev){ev.preventDefault();var v=e.value.trim();
+if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)){m.textContent='נראה שיש טעות בכתובת המייל.';return}
+var b=f.querySelector('button');b.disabled=true;m.textContent='שולחת...';
+var fd=new FormData();fd.append('fields[email]',v);fd.append('ml-submit','1');fd.append('anticsrf','true');
+fetch('https://assets.mailerlite.com/jsonp/2770019/forms/203410604322457384/subscribe',{method:'POST',body:fd}).then(function(r){return r.json().catch(function(){return{}})}).then(function(d){
+if(d&&d.success){f.classList.add('done');m.textContent='נשלח! הקישור מחכה לך במייל (אם לא הגיע תוך כמה דקות, בדקי בקידומי מכירות או בספאם).';try{localStorage.setItem('ym_kit_mailed','1')}catch(_){}}
+else{b.disabled=false;m.textContent='משהו לא עבד. נסי שוב, או שמרי את הכתובת של הדף הזה.'}}).catch(function(){b.disabled=false;m.textContent='משהו לא עבד. נסי שוב, או שמרי את הכתובת של הדף הזה.'})});
+try{if(localStorage.getItem('ym_kit_mailed')){f.classList.add('done');m.textContent='הקישור כבר נשלח למייל שלך.'}}catch(_){}})();
+</script>
+
 <nav class="toc" aria-label="תוכן הערכה"><a href="#review">בדיקה אישית</a><a href="#wins">המודעות שעובדות</a><a href="#calc">מחשבון תקציב</a><a href="#steps">צ'קליסט</a><a href="#bonus">בונוס: מודעות מוכנות</a></nav>
 </div></section>
 <section class="sec alt" id="review"><div class="wrap"><div class="review">
