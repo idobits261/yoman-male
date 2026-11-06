@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','325723133459666');fbq('track','PageView');
+try{if(!localStorage.getItem('ym_kit_purchase')){fbq('track','Purchase',{value:97,currency:'ILS',content_ids:['kit-ads'],content_type:'product'});localStorage.setItem('ym_kit_purchase','1')}}catch(e){}
+</script>
+<title>ערכת המודעות לקליניקה</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@700;900&family=Assistant:wght@400;600;700&display=swap">
+<style>
+/* Layout: one RTL reading column; each ready-made ad is a copyable card; checklist as a real ordered sequence. */
+:root{
+  --bg:#faf6f8; --surface:#ffffff; --ink:#2a1d28; --muted:#6c5c68; --line:#eadde5;
+  --accent:#8a3d6b; --accent-soft:#f3e6ee; --accent-ink:#ffffff;
+  --display:"Frank Ruhl Libre","David",Georgia,serif;
+  --body:"Assistant","Arial Hebrew",Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#1b1420; --surface:#251c2a; --ink:#f2e8ef; --muted:#b9a8b5; --line:#3a2d40;
+  --accent:#dc90bd; --accent-soft:#33253a; --accent-ink:#1b1420; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1b1420; --surface:#251c2a; --ink:#f2e8ef; --muted:#b9a8b5; --line:#3a2d40;
+  --accent:#dc90bd; --accent-soft:#33253a; --accent-ink:#1b1420; color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.65;direction:rtl;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:720px;margin:0 auto;padding-block:32px 72px;display:flex;flex-direction:column;gap:56px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.2}
+h1{font-size:clamp(34px,7vw,50px);font-weight:900}
+h2{font-size:clamp(25px,5vw,32px)}
+h3{font-size:20px}
+.lede{color:var(--muted);margin:10px 0 0;max-width:58ch}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.05em;color:var(--accent)}
+section{display:flex;flex-direction:column;gap:18px}
+.note{background:var(--accent-soft);border-radius:12px;padding:14px 16px;font-size:16px}
+.note b{color:var(--accent)}
+.cards{display:grid;gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.card-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.tag{font-size:13px;font-weight:700;color:var(--accent)}
+.hook{font-family:var(--display);font-size:20px;font-weight:700;margin:0}
+.body{margin:0;white-space:pre-line}
+.cta{font-size:14px;color:var(--muted)}
+.copy{appearance:none;border:1px solid var(--accent);background:transparent;color:var(--accent);font:600 14px var(--body);padding:5px 12px;border-radius:999px;cursor:pointer}
+.copy:hover{background:var(--accent);color:var(--accent-ink)}
+.copy:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.hooks{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.hooks li{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 16px;display:grid;gap:2px}
+.hooks small{color:var(--muted);font-size:14px}
+ol.steps{margin:0;padding:0;list-style:none;counter-reset:s;display:grid;gap:14px}
+ol.steps li{counter-increment:s;display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:start}
+ol.steps li::before{content:counter(s);font-family:var(--display);font-weight:900;font-size:20px;color:var(--accent-ink);background:var(--accent);
+  width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-variant-numeric:tabular-nums}
+ol.steps b{display:block}
+ol.steps span{color:var(--muted)}
+.cta-box{background:var(--surface);border:2px solid var(--accent);border-radius:16px;padding:22px;display:grid;gap:8px}
+.cta-box p{margin:0}
+footer{color:var(--muted);font-size:14px;text-align:center}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="eyebrow">יומן מלא</span>
+    <h1>ערכת המודעות לקליניקה</h1>
+    <p class="lede">10 מודעות מוכנות, 10 הוקים, הודעות מענה אוטומטי וצ'קליסט להעלאת קמפיין. מעתיקים, משנים מחיר ועיר, ומעלים.</p>
+  </header>
+
+  <div class="note"><b>לפני שמתחילים:</b> בכל מקום שכתוב [מחיר] או [עיר], שימי את המחיר והאזור שלך. המודעות בנויות לפי 4 הדברים שמשותפים למודעות שרצות חודשים: הצעה אחת במחיר אחד, פנייה לאזור, הורדת חשש והובלה לשיחה.</div>
+
+  <section>
+    <h2>10 מודעות מוכנות</h2>
+    <div class="cards" id="ads"></div>
+  </section>
+
+  <section>
+    <h2>10 הוקים להחלפה</h2>
+    <p class="lede" style="margin:0">ההוק הוא המשפט הראשון, וגם המשפט שעל התמונה. כשמודעה מפסיקה להביא פניות, לא מחליפים את כל המודעה. מחליפים רק את ההוק.</p>
+    <ul class="hooks" id="hooks"></ul>
+  </section>
+
+  <section>
+    <h2>הודעות מענה אוטומטי</h2>
+    <p class="lede" style="margin:0">בוואטסאפ עסקי: הגדרות ← כלים לעסקים ← הודעת פתיחה / הודעת היעדרות. פנייה שמחכה שעה כבר קובעת אצל מישהי אחרת.</p>
+    <div class="cards" id="replies"></div>
+  </section>
+
+  <section>
+    <h2>צ'קליסט להעלאת קמפיין</h2>
+    <ol class="steps">
+      <li><span><b>מטרת קמפיין: הודעות (Engagement ← Messaging) לוואטסאפ.</b>הפנייה מגיעה ישר אלייך, בלי טופס.</span></li>
+      <li><span><b>מיקום: רדיוס 10–15 ק"מ סביב הקליניקה.</b>לא כל הארץ. לקוחה לא תיסע שעה לטיפול פנים.</span></li>
+      <li><span><b>קהל: נשים, בטווח הגילאים של הלקוחות שלך, בלי תחומי עניין.</b>המודעה עצמה עושה את הסינון.</span></li>
+      <li><span><b>תקציב: 30–50 ₪ ליום.</b>פחות מזה, מטא לא מספיקה ללמוד מי מגיבה.</span></li>
+      <li><span><b>3 מודעות בתוך הקמפיין, כל אחת עם הוק אחר.</b>אחרי כמה ימים רואים מי מביאה פניות.</span></li>
+      <li><span><b>תמונה עם משפט גדול עליה.</b>תמונה אמיתית מהקליניקה עדיפה על תמונת מאגר. בלי לפני/אחרי, מטא לא מאשרת.</span></li>
+      <li><span><b>להפעיל את הודעת הפתיחה בוואטסאפ לפני שהמודעה עולה.</b></span></li>
+      <li><span><b>לא לגעת 3–4 ימים.</b>כל שינוי מאפס את הלמידה של מטא.</span></li>
+      <li><span><b>מודעה שהוציאה סכום של 2–3 טיפולים בלי אף פנייה: לכבות.</b>את התקציב מעבירים למודעה שעובדת.</span></li>
+      <li><span><b>כשהתדירות (Frequency) עוברת 2–2.5: להחליף הוק.</b>זה הסימן שאותן נשים רואות את המודעה שוב ושוב.</span></li>
+    </ol>
+  </section>
+
+  <div class="cta-box">
+    <h3>אין לך זמן לעשות את זה לבד?</h3>
+    <p>ב"30 יום ליומן מלא" אני בונה ומנהל לך את כל מה שבערכה: קמפיין, מודעות, מענה אוטומטי ודוח שבועי. עני "יומן מלא" לאחד המיילים שלי, ואחזור אלייך.</p>
+  </div>
+
+  <footer>יומן מלא · yoman-male.com</footer>
+</div>
+
+<script>
+const ads=[
+ ["לייזר לכל הגוף","נמאס לך להתגלח כל בוקר?","הסרת שיער בלייזר לכל הגוף ב-[מחיר] ₪ לטיפול.\nמשלמים על כל טיפול בנפרד, בלי התחייבות לסדרה.\nבדיקת התאמה לסוג העור לפני הטיפול הראשון.\nקליניקה פרטית ב[עיר].","שלחי הודעה ונבדוק מה מתאים לך 👇"],
+ ["לייזר פנים","השערות בסנטר חוזרות כל שבוע?","לייזר לפנים (סנטר, שפם, לחיים) ב-[מחיר] ₪ לטיפול.\nטיפול של כמה דקות, בלי סדרה מראש.\nתושבות [עיר] והסביבה.","שלחי הודעה ונקבע 👇"],
+ ["אפילציה","הלייזר לא תופס את השערות הבהירות?","אפילציה מטפלת בכל שערה בנפרד, גם בשיער לבן ובהיר.\nטיפול ראשון ב-[מחיר] ₪.\nקליניקה פרטית ב[עיר].","שלחי תמונה של האזור לבדיקה ראשונית 👇"],
+ ["טיפול פנים","העור נראה עייף, גם אחרי לילה טוב?","טיפול פנים ראשון ב-[מחיר] ₪, מותאם לסוג העור שלך.\nשעה שקטה רק בשבילך, בלי חדר המתנה.\n[עיר] והסביבה.","שלחי הודעה ונמצא לך תור 👇"],
+ ["ניקוי עמוק","שום קרם לא עוזר לנקבוביות?","ניקוי עמוק לעור עם נטייה לשומניות ולפצעונים, ב-[מחיר] ₪.\nכולל אבחון עור והמלצה לשגרה בבית.\nקליניקה ב[עיר].","שלחי הודעה עם תמונה של העור לבדיקה 👇"],
+ ["עיצוב גבות","מציירת את הגבות כל בוקר?","עיצוב גבות לפי מבנה הפנים שלך, ב-[מחיר] ₪.\nחצי שעה, ויוצאים עם גבות מסודרות וסימטריות.\n[עיר] והסביבה.","שלחי הודעה ונקבע 👇"],
+ ["הרמת ריסים","ריסים מורמים בלי מסקרה, לכמה שבועות","הרמת ריסים ב-[מחיר] ₪.\nבלי תוספות ובלי תחזוקה יומית.\nקליניקה פרטית ב[עיר].","שלחי הודעה ונמצא תור 👇"],
+ ["איפור קבוע","רוצה לקום בבוקר עם גבות מוכנות?","מיקרובליידינג ואיפור קבוע לגבות, ב-[מחיר] ₪ כולל טיפול חיזוק.\nשלחי תמונה של הגבות שלך, ואגיד לך מה אפשר לעשות לפני שמחליטים.\n[עיר] והסביבה.","שלחי תמונה לבדיקה ראשונית 👇"],
+ ["פיגמנטציה","הכתמים בפנים לא יורדים גם אחרי הקיץ?","טיפול לכתמים ולפיגמנטציה, ב-[מחיר] ₪ לטיפול.\nמתחילים באבחון, ורק אז מחליטים כמה טיפולים צריך.\nקליניקה ב[עיר].","שלחי הודעה עם תמונה לאבחון ראשוני 👇"],
+ ["תורים פנויים","התפנו [מספר] תורים השבוע ב[עיר]","[שם הטיפול] ב-[מחיר] ₪, רק לתורים שהתפנו השבוע.\n(להשתמש רק כשזה באמת נכון. לקוחות מרגישות כשמבצע \"אחרון\" חוזר כל שבוע.)","שלחי הודעה לפני שהתורים נתפסים 👇"]
+];
+const hooks=[
+ ["שאלה על כאב","נמאס לך להתגלח כל בוקר?"],
+ ["שבירת אמונה","קרם יקר לא יעשה לך עור טוב."],
+ ["אזור","תושבות [עיר]: לייזר לכל הגוף ב-[מחיר] ₪"],
+ ["מספר","3 סימנים שהעור שלך צריך ניקוי עמוק"],
+ ["\"זה לא אשמתך\"","זה לא שהלייזר לא עובד עלייך. השערות הבהירות פשוט צריכות שיטה אחרת."],
+ ["משפט שהלקוחה אומרת לעצמה","\"עוד פעם שכחתי לצייר גבות לפני הזום\""],
+ ["הורדת חשש","טיפול ראשון בלי התחייבות לסדרה"],
+ ["סקרנות","מה עושות קוסמטיקאיות לעור של עצמן בחורף?"],
+ ["תוצאה","לצאת מהבית בלי לבדוק את הסנטר במראה"],
+ ["דחיפות אמיתית","התפנו 2 תורים ליום חמישי"]
+];
+const replies=[
+ ["הודעת פתיחה","היי! תודה שפנית 😊\nאני כרגע באמצע טיפול, ואחזור אלייך עד שעה.\nבינתיים, ספרי לי: איזה טיפול מעניין אותך, ובאיזה אזור את גרה?"],
+ ["מחוץ לשעות הפעילות","היי! קיבלתי את ההודעה שלך 🌙\nהקליניקה פתוחה ב[ימים ושעות], ואחזור אלייך מחר בבוקר.\nאם תכתבי לי עכשיו איזה טיפול מעניין אותך, אגיע מוכנה עם תורים פנויים."],
+ ["פולואפ למחרת","היי [שם], רק רציתי לוודא שראית את ההודעה שלי 😊\nנשארו לי [מספר] תורים פנויים השבוע. רוצה שאשריין לך אחד?"]
+];
+function copyBtn(text){const b=document.createElement("button");b.className="copy";b.textContent="העתקה";
+ b.onclick=()=>{const done=()=>{b.textContent="הועתק ✓";setTimeout(()=>b.textContent="העתקה",1600)};
+  if(navigator.clipboard){navigator.clipboard.writeText(text).then(done).catch(()=>{b.textContent="סמני והעתיקי ידנית"})}};return b}
+const esc=s=>s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+const adsEl=document.getElementById("ads");
+ads.forEach(([tag,hook,body,cta])=>{const c=document.createElement("article");c.className="card";
+ c.innerHTML=`<div class="card-top"><span class="tag">${esc(tag)}</span></div><p class="hook">${esc(hook)}</p><p class="body">${esc(body)}</p><span class="cta">${esc(cta)}</span>`;
+ c.querySelector(".card-top").appendChild(copyBtn(`${hook}\n\n${body}\n\n${cta}`));adsEl.appendChild(c)});
+const hEl=document.getElementById("hooks");
+hooks.forEach(([t,h])=>{const li=document.createElement("li");li.innerHTML=`<small>${esc(t)}</small><span>${esc(h)}</span>`;hEl.appendChild(li)});
+const rEl=document.getElementById("replies");
+replies.forEach(([t,body])=>{const c=document.createElement("article");c.className="card";
+ c.innerHTML=`<div class="card-top"><span class="tag">${esc(t)}</span></div><p class="body">${esc(body)}</p>`;
+ c.querySelector(".card-top").appendChild(copyBtn(body));rEl.appendChild(c)});
+</script>
+
+</body>
+</html>
