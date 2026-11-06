@@ -2,162 +2,112 @@
 <html lang="he" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
+<title>ערכת המודעות לקליניקה</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@700;900&family=Heebo:wght@400;600;700;800;900&display=swap">
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','325723133459666');fbq('track','PageView');
 try{if(!localStorage.getItem('ym_kit_purchase')){fbq('track','Purchase',{value:97,currency:'ILS',content_ids:['kit-ads'],content_type:'product'});localStorage.setItem('ym_kit_purchase','1')}}catch(e){}
 </script>
-<title>ערכת המודעות לקליניקה</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@700;900&family=Assistant:wght@400;600;700&display=swap">
 <style>
-/* Layout: one RTL reading column; each ready-made ad is a copyable card; checklist as a real ordered sequence. */
-:root{
-  --bg:#faf6f8; --surface:#ffffff; --ink:#2a1d28; --muted:#6c5c68; --line:#eadde5;
-  --accent:#8a3d6b; --accent-soft:#f3e6ee; --accent-ink:#ffffff;
-  --display:"Frank Ruhl Libre","David",Georgia,serif;
-  --body:"Assistant","Arial Hebrew",Arial,sans-serif;
-}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#1b1420; --surface:#251c2a; --ink:#f2e8ef; --muted:#b9a8b5; --line:#3a2d40;
-  --accent:#dc90bd; --accent-soft:#33253a; --accent-ink:#1b1420; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#1b1420; --surface:#251c2a; --ink:#f2e8ef; --muted:#b9a8b5; --line:#3a2d40;
-  --accent:#dc90bd; --accent-soft:#33253a; --accent-ink:#1b1420; color-scheme:dark}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.65;direction:rtl;
-  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-.wrap{max-width:720px;margin:0 auto;padding-block:32px 72px;display:flex;flex-direction:column;gap:56px}
-h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.2}
-h1{font-size:clamp(34px,7vw,50px);font-weight:900}
-h2{font-size:clamp(25px,5vw,32px)}
-h3{font-size:20px}
-.lede{color:var(--muted);margin:10px 0 0;max-width:58ch}
-.eyebrow{font-size:13px;font-weight:700;letter-spacing:.05em;color:var(--accent)}
-section{display:flex;flex-direction:column;gap:18px}
-.note{background:var(--accent-soft);border-radius:12px;padding:14px 16px;font-size:16px}
-.note b{color:var(--accent)}
-.cards{display:grid;gap:14px}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:10px;min-width:0}
+:root{--ink:#170E1C;--ink-2:#1F1427;--ink-3:#2A1B34;--gold:#C9819B;--gold-2:#E8A9BE;--gold-ink:#1F0A12;--text-d:#F4EAF0;--muted-d:#C0AEBD;--soft-d:#948391;--line:rgba(232,169,190,.22);--serif:"Frank Ruhl Libre","David",Georgia,serif;--sans:"Heebo","Arial Hebrew",Arial,sans-serif;color-scheme:dark}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--ink)}
+body{color:var(--text-d);font-family:var(--sans);font-size:17px;line-height:1.75;direction:rtl;-webkit-font-smoothing:antialiased}
+.sec{padding-block:clamp(40px,6vw,72px);padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+.sec.alt{background:var(--ink-2)}
+.wrap{max-width:720px;margin:0 auto}
+.center{text-align:center}
+h1,h2,h3{font-family:var(--serif);text-wrap:balance;line-height:1.3;margin:0;color:#fff}
+h1{font-size:clamp(2rem,6vw,3rem);font-weight:900}
+h2{font-size:clamp(1.5rem,4vw,2.1rem);font-weight:700;margin-bottom:10px}
+.g{color:var(--gold-2)}
+.brand{display:block;font-weight:800;color:var(--gold-2);margin-bottom:12px;letter-spacing:.02em}
+.lead{font-size:clamp(1.08rem,2.4vw,1.25rem);font-weight:600;color:var(--text-d);max-width:600px;margin:14px auto 0}
+.intro{color:var(--muted-d);max-width:580px;margin:0 auto 26px}
+.cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,var(--gold) 0%,var(--gold-2) 50%,var(--gold) 100%);color:var(--gold-ink);font-family:var(--sans);font-weight:900;font-size:1.12rem;padding:16px 34px;border-radius:999px;text-decoration:none;box-shadow:0 16px 30px -14px rgba(232,169,190,.6);border:0;cursor:pointer}
+.cta:focus-visible,.copy:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.price{font-family:var(--serif);font-weight:900;font-size:clamp(2.6rem,8vw,3.4rem);color:#fff;line-height:1}
+.price small{font-family:var(--sans);font-size:1rem;font-weight:600;color:var(--muted-d)}
+.note{background:var(--ink-3);border:1px solid var(--line);border-radius:14px;padding:16px 20px;color:var(--text-d);text-align:center;max-width:620px;margin:0 auto}
+.note b{color:var(--gold-2)}
+.cards{display:grid;gap:14px;text-align:right}
+.card{background:var(--ink-3);border:1px solid var(--line);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:10px;min-width:0;text-align:right}
 .card-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-.tag{font-size:13px;font-weight:700;color:var(--accent)}
-.hook{font-family:var(--display);font-size:20px;font-weight:700;margin:0}
-.body{margin:0;white-space:pre-line}
-.cta{font-size:14px;color:var(--muted)}
-.copy{appearance:none;border:1px solid var(--accent);background:transparent;color:var(--accent);font:600 14px var(--body);padding:5px 12px;border-radius:999px;cursor:pointer}
-.copy:hover{background:var(--accent);color:var(--accent-ink)}
-.copy:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
-.hooks{list-style:none;margin:0;padding:0;display:grid;gap:10px}
-.hooks li{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 16px;display:grid;gap:2px}
-.hooks small{color:var(--muted);font-size:14px}
-ol.steps{margin:0;padding:0;list-style:none;counter-reset:s;display:grid;gap:14px}
-ol.steps li{counter-increment:s;display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:start}
-ol.steps li::before{content:counter(s);font-family:var(--display);font-weight:900;font-size:20px;color:var(--accent-ink);background:var(--accent);
-  width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-variant-numeric:tabular-nums}
-ol.steps b{display:block}
-ol.steps span{color:var(--muted)}
-.cta-box{background:var(--surface);border:2px solid var(--accent);border-radius:16px;padding:22px;display:grid;gap:8px}
-.cta-box p{margin:0}
-footer{color:var(--muted);font-size:14px;text-align:center}
+.tag{font-size:13px;font-weight:800;color:var(--gold-ink);background:var(--gold-2);border-radius:999px;padding:2px 12px}
+.hook{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:#fff;margin:0;line-height:1.4}
+.body{margin:0;white-space:pre-line;color:var(--text-d)}
+.ctaline{font-size:.95rem;color:var(--gold-2);font-weight:600}
+.copy{appearance:none;border:1px solid var(--gold-2);background:transparent;color:var(--gold-2);font:700 14px var(--sans);padding:5px 14px;border-radius:999px;cursor:pointer}
+.copy:hover{background:var(--gold-2);color:var(--gold-ink)}
+.hooks{list-style:none;margin:0;padding:0;display:grid;gap:10px;text-align:right}
+.hooks li{background:var(--ink-3);border:1px solid var(--line);border-radius:14px;padding:12px 18px;display:grid;gap:2px}
+.hooks small{color:var(--gold-2);font-size:.85rem;font-weight:700}
+.hooks span{color:#fff;font-weight:600}
+ol.steps{margin:0;padding:0;list-style:none;counter-reset:s;display:grid;gap:12px;text-align:right}
+ol.steps li{counter-increment:s;display:grid;grid-template-columns:40px 1fr;gap:14px;align-items:start;background:var(--ink-3);border:1px solid var(--line);border-radius:14px;padding:14px 18px}
+ol.steps li::before{content:counter(s);font-family:var(--serif);font-weight:900;font-size:1.3rem;color:var(--gold-ink);background:var(--gold-2);width:36px;height:36px;border-radius:50%;display:grid;place-items:center}
+ol.steps b{display:block;color:#fff}
+ol.steps span{color:var(--muted-d)}
+.feat{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;text-align:right}
+@media(max-width:560px){.feat{grid-template-columns:1fr}}
+.feat div{background:var(--ink-3);border:1px solid var(--line);border-radius:16px;padding:18px}
+.feat b{display:block;font-family:var(--serif);font-size:1.6rem;color:var(--gold-2);line-height:1.1}
+.feat strong{display:block;color:#fff;margin:4px 0 2px}
+.feat p{margin:0;color:var(--muted-d);font-size:.95rem;line-height:1.6}
+details{background:var(--ink-3);border:1px solid var(--line);border-radius:14px;padding:14px 20px;text-align:right}
+details+details{margin-top:10px}
+summary{cursor:pointer;font-weight:700;color:#fff}
+details p{margin:8px 0 0;color:var(--muted-d)}
+.stack{display:flex;flex-direction:column;align-items:center;gap:14px}
+footer{padding:28px 18px;text-align:center;color:var(--soft-d);font-size:.9rem;background:var(--ink)}
+footer a{color:var(--muted-d)}
 </style>
-
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <span class="eyebrow">יומן מלא</span>
-    <h1>ערכת המודעות לקליניקה</h1>
-    <p class="lede">10 מודעות מוכנות, 10 הוקים, הודעות מענה אוטומטי וצ'קליסט להעלאת קמפיין. מעתיקים, משנים מחיר ועיר, ומעלים.</p>
-  </header>
 
-  <div class="note"><b>לפני שמתחילים:</b> בכל מקום שכתוב [מחיר] או [עיר], שימי את המחיר והאזור שלך. המודעות בנויות לפי 4 הדברים שמשותפים למודעות שרצות חודשים: הצעה אחת במחיר אחד, פנייה לאזור, הורדת חשש והובלה לשיחה.</div>
-
-  <section>
-    <h2>10 מודעות מוכנות</h2>
-    <div class="cards" id="ads"></div>
-  </section>
-
-  <section>
-    <h2>10 הוקים להחלפה</h2>
-    <p class="lede" style="margin:0">ההוק הוא המשפט הראשון, וגם המשפט שעל התמונה. כשמודעה מפסיקה להביא פניות, לא מחליפים את כל המודעה. מחליפים רק את ההוק.</p>
-    <ul class="hooks" id="hooks"></ul>
-  </section>
-
-  <section>
-    <h2>הודעות מענה אוטומטי</h2>
-    <p class="lede" style="margin:0">בוואטסאפ עסקי: הגדרות ← כלים לעסקים ← הודעת פתיחה / הודעת היעדרות. פנייה שמחכה שעה כבר קובעת אצל מישהי אחרת.</p>
-    <div class="cards" id="replies"></div>
-  </section>
-
-  <section>
-    <h2>צ'קליסט להעלאת קמפיין</h2>
-    <ol class="steps">
-      <li><span><b>מטרת קמפיין: הודעות (Engagement ← Messaging) לוואטסאפ.</b>הפנייה מגיעה ישר אלייך, בלי טופס.</span></li>
-      <li><span><b>מיקום: רדיוס 10–15 ק"מ סביב הקליניקה.</b>לא כל הארץ. לקוחה לא תיסע שעה לטיפול פנים.</span></li>
-      <li><span><b>קהל: נשים, בטווח הגילאים של הלקוחות שלך, בלי תחומי עניין.</b>המודעה עצמה עושה את הסינון.</span></li>
-      <li><span><b>תקציב: 30–50 ₪ ליום.</b>פחות מזה, מטא לא מספיקה ללמוד מי מגיבה.</span></li>
-      <li><span><b>3 מודעות בתוך הקמפיין, כל אחת עם הוק אחר.</b>אחרי כמה ימים רואים מי מביאה פניות.</span></li>
-      <li><span><b>תמונה עם משפט גדול עליה.</b>תמונה אמיתית מהקליניקה עדיפה על תמונת מאגר. בלי לפני/אחרי, מטא לא מאשרת.</span></li>
-      <li><span><b>להפעיל את הודעת הפתיחה בוואטסאפ לפני שהמודעה עולה.</b></span></li>
-      <li><span><b>לא לגעת 3–4 ימים.</b>כל שינוי מאפס את הלמידה של מטא.</span></li>
-      <li><span><b>מודעה שהוציאה סכום של 2–3 טיפולים בלי אף פנייה: לכבות.</b>את התקציב מעבירים למודעה שעובדת.</span></li>
-      <li><span><b>כשהתדירות (Frequency) עוברת 2–2.5: להחליף הוק.</b>זה הסימן שאותן נשים רואות את המודעה שוב ושוב.</span></li>
-    </ol>
-  </section>
-
-  <div class="cta-box">
-    <h3>אין לך זמן לעשות את זה לבד?</h3>
-    <p>ב"30 יום ליומן מלא" אני בונה ומנהל לך את כל מה שבערכה: קמפיין, מודעות, מענה אוטומטי ודוח שבועי. עני "יומן מלא" לאחד המיילים שלי, ואחזור אלייך.</p>
-  </div>
-
-  <footer>יומן מלא · yoman-male.com</footer>
-</div>
-
+<section class="sec center"><div class="wrap">
+<span class="brand">יומן מלא</span>
+<h1>ערכת <span class="g">המודעות</span> לקליניקה</h1>
+<p class="lead">10 מודעות מוכנות, 10 הוקים, הודעות מענה אוטומטי וצ'קליסט להעלאת קמפיין.<br>מעתיקים, משנים מחיר ועיר, ומעלים.</p>
+<p class="intro" style="margin-top:18px">שמרי את הקישור לעמוד הזה, כדי לחזור אליו מתי שתרצי.</p>
+<div class="note"><b>לפני שמתחילים:</b> בכל מקום שכתוב [מחיר] או [עיר], שימי את המחיר והאזור שלך. המודעות בנויות לפי 4 הדברים שמשותפים למודעות שרצות חודשים: הצעה אחת במחיר אחד, פנייה לאזור, הורדת חשש והובלה לשיחה.</div>
+</div></section>
+<section class="sec alt"><div class="wrap">
+<div class="center"><h2>10 מודעות <span class="g">מוכנות</span></h2><p class="intro">לכל מודעה כפתור העתקה. מדביקים במנהל המודעות ומשנים רק את מה שבסוגריים.</p></div>
+<div class="cards" id="ads"></div></div></section>
+<section class="sec"><div class="wrap">
+<div class="center"><h2>10 הוקים <span class="g">להחלפה</span></h2><p class="intro">ההוק הוא המשפט הראשון, וגם המשפט שעל התמונה. כשמודעה מפסיקה להביא פניות, לא מחליפים את כל המודעה. מחליפים רק את ההוק.</p></div>
+<ul class="hooks" id="hooks"></ul></div></section>
+<section class="sec alt"><div class="wrap">
+<div class="center"><h2>הודעות <span class="g">מענה אוטומטי</span></h2><p class="intro">בוואטסאפ עסקי: הגדרות ← כלים לעסקים ← הודעת פתיחה / הודעת היעדרות. פנייה שמחכה שעה כבר קובעת אצל מישהי אחרת.</p></div>
+<div class="cards" id="replies"></div></div></section>
+<section class="sec"><div class="wrap">
+<div class="center"><h2>צ'קליסט <span class="g">להעלאת קמפיין</span></h2><p class="intro">10 צעדים, לפי הסדר.</p></div>
+<ol class="steps"><li><span><b>מטרת קמפיין: הודעות (Engagement ← Messaging) לוואטסאפ.</b>הפנייה מגיעה ישר אלייך, בלי טופס.</span></li>
+<li><span><b>מיקום: רדיוס 10–15 ק"מ סביב הקליניקה.</b>לא כל הארץ. לקוחה לא תיסע שעה לטיפול פנים.</span></li>
+<li><span><b>קהל: נשים, בטווח הגילאים של הלקוחות שלך, בלי תחומי עניין.</b>המודעה עצמה עושה את הסינון.</span></li>
+<li><span><b>תקציב: 30–50 ₪ ליום.</b>פחות מזה, מטא לא מספיקה ללמוד מי מגיבה.</span></li>
+<li><span><b>3 מודעות בתוך הקמפיין, כל אחת עם הוק אחר.</b>אחרי כמה ימים רואים מי מביאה פניות.</span></li>
+<li><span><b>תמונה עם משפט גדול עליה.</b>תמונה אמיתית מהקליניקה עדיפה על תמונת מאגר. בלי לפני/אחרי, מטא לא מאשרת.</span></li>
+<li><span><b>להפעיל את הודעת הפתיחה בוואטסאפ לפני שהמודעה עולה.</b></span></li>
+<li><span><b>לא לגעת 3–4 ימים.</b>כל שינוי מאפס את הלמידה של מטא.</span></li>
+<li><span><b>מודעה שהוציאה סכום של 2–3 טיפולים בלי אף פנייה: לכבות.</b>את התקציב מעבירים למודעה שעובדת.</span></li>
+<li><span><b>כשהתדירות (Frequency) עוברת 2–2.5: להחליף הוק.</b>זה הסימן שאותן נשים רואות את המודעה שוב ושוב.</span></li></ol></div></section>
+<section class="sec alt center"><div class="wrap stack">
+<h2>אין לך זמן <span class="g">לעשות את זה לבד?</span></h2>
+<p class="intro" style="margin:0">ב"30 יום ליומן מלא" אני בונה ומנהל לך את כל מה שבערכה: קמפיין, מודעות, מענה אוטומטי ודוח שבועי. עני "יומן מלא" לאחד המיילים שלי, ואחזור אלייך.</p>
+</div></section>
+<footer>יומן מלא – עידו ביטון · עוסק מורשה 200352623 · <a href="https://yoman-male.com/#terms">תקנון</a> · <a href="https://yoman-male.com/#privacy">מדיניות פרטיות</a></footer>
 <script>
-const ads=[
- ["לייזר לכל הגוף","נמאס לך להתגלח כל בוקר?","הסרת שיער בלייזר לכל הגוף ב-[מחיר] ₪ לטיפול.\nמשלמים על כל טיפול בנפרד, בלי התחייבות לסדרה.\nבדיקת התאמה לסוג העור לפני הטיפול הראשון.\nקליניקה פרטית ב[עיר].","שלחי הודעה ונבדוק מה מתאים לך 👇"],
- ["לייזר פנים","השערות בסנטר חוזרות כל שבוע?","לייזר לפנים (סנטר, שפם, לחיים) ב-[מחיר] ₪ לטיפול.\nטיפול של כמה דקות, בלי סדרה מראש.\nתושבות [עיר] והסביבה.","שלחי הודעה ונקבע 👇"],
- ["אפילציה","הלייזר לא תופס את השערות הבהירות?","אפילציה מטפלת בכל שערה בנפרד, גם בשיער לבן ובהיר.\nטיפול ראשון ב-[מחיר] ₪.\nקליניקה פרטית ב[עיר].","שלחי תמונה של האזור לבדיקה ראשונית 👇"],
- ["טיפול פנים","העור נראה עייף, גם אחרי לילה טוב?","טיפול פנים ראשון ב-[מחיר] ₪, מותאם לסוג העור שלך.\nשעה שקטה רק בשבילך, בלי חדר המתנה.\n[עיר] והסביבה.","שלחי הודעה ונמצא לך תור 👇"],
- ["ניקוי עמוק","שום קרם לא עוזר לנקבוביות?","ניקוי עמוק לעור עם נטייה לשומניות ולפצעונים, ב-[מחיר] ₪.\nכולל אבחון עור והמלצה לשגרה בבית.\nקליניקה ב[עיר].","שלחי הודעה עם תמונה של העור לבדיקה 👇"],
- ["עיצוב גבות","מציירת את הגבות כל בוקר?","עיצוב גבות לפי מבנה הפנים שלך, ב-[מחיר] ₪.\nחצי שעה, ויוצאים עם גבות מסודרות וסימטריות.\n[עיר] והסביבה.","שלחי הודעה ונקבע 👇"],
- ["הרמת ריסים","ריסים מורמים בלי מסקרה, לכמה שבועות","הרמת ריסים ב-[מחיר] ₪.\nבלי תוספות ובלי תחזוקה יומית.\nקליניקה פרטית ב[עיר].","שלחי הודעה ונמצא תור 👇"],
- ["איפור קבוע","רוצה לקום בבוקר עם גבות מוכנות?","מיקרובליידינג ואיפור קבוע לגבות, ב-[מחיר] ₪ כולל טיפול חיזוק.\nשלחי תמונה של הגבות שלך, ואגיד לך מה אפשר לעשות לפני שמחליטים.\n[עיר] והסביבה.","שלחי תמונה לבדיקה ראשונית 👇"],
- ["פיגמנטציה","הכתמים בפנים לא יורדים גם אחרי הקיץ?","טיפול לכתמים ולפיגמנטציה, ב-[מחיר] ₪ לטיפול.\nמתחילים באבחון, ורק אז מחליטים כמה טיפולים צריך.\nקליניקה ב[עיר].","שלחי הודעה עם תמונה לאבחון ראשוני 👇"],
- ["תורים פנויים","התפנו [מספר] תורים השבוע ב[עיר]","[שם הטיפול] ב-[מחיר] ₪, רק לתורים שהתפנו השבוע.\n(להשתמש רק כשזה באמת נכון. לקוחות מרגישות כשמבצע \"אחרון\" חוזר כל שבוע.)","שלחי הודעה לפני שהתורים נתפסים 👇"]
-];
-const hooks=[
- ["שאלה על כאב","נמאס לך להתגלח כל בוקר?"],
- ["שבירת אמונה","קרם יקר לא יעשה לך עור טוב."],
- ["אזור","תושבות [עיר]: לייזר לכל הגוף ב-[מחיר] ₪"],
- ["מספר","3 סימנים שהעור שלך צריך ניקוי עמוק"],
- ["\"זה לא אשמתך\"","זה לא שהלייזר לא עובד עלייך. השערות הבהירות פשוט צריכות שיטה אחרת."],
- ["משפט שהלקוחה אומרת לעצמה","\"עוד פעם שכחתי לצייר גבות לפני הזום\""],
- ["הורדת חשש","טיפול ראשון בלי התחייבות לסדרה"],
- ["סקרנות","מה עושות קוסמטיקאיות לעור של עצמן בחורף?"],
- ["תוצאה","לצאת מהבית בלי לבדוק את הסנטר במראה"],
- ["דחיפות אמיתית","התפנו 2 תורים ליום חמישי"]
-];
-const replies=[
- ["הודעת פתיחה","היי! תודה שפנית 😊\nאני כרגע באמצע טיפול, ואחזור אלייך עד שעה.\nבינתיים, ספרי לי: איזה טיפול מעניין אותך, ובאיזה אזור את גרה?"],
- ["מחוץ לשעות הפעילות","היי! קיבלתי את ההודעה שלך 🌙\nהקליניקה פתוחה ב[ימים ושעות], ואחזור אלייך מחר בבוקר.\nאם תכתבי לי עכשיו איזה טיפול מעניין אותך, אגיע מוכנה עם תורים פנויים."],
- ["פולואפ למחרת","היי [שם], רק רציתי לוודא שראית את ההודעה שלי 😊\nנשארו לי [מספר] תורים פנויים השבוע. רוצה שאשריין לך אחד?"]
-];
-function copyBtn(text){const b=document.createElement("button");b.className="copy";b.textContent="העתקה";
- b.onclick=()=>{const done=()=>{b.textContent="הועתק ✓";setTimeout(()=>b.textContent="העתקה",1600)};
-  if(navigator.clipboard){navigator.clipboard.writeText(text).then(done).catch(()=>{b.textContent="סמני והעתיקי ידנית"})}};return b}
+const ads=[["לייזר לכל הגוף", "נמאס לך להתגלח כל בוקר?", "הסרת שיער בלייזר לכל הגוף ב-[מחיר] ₪ לטיפול.\nמשלמים על כל טיפול בנפרד, בלי התחייבות לסדרה.\nבדיקת התאמה לסוג העור לפני הטיפול הראשון.\nקליניקה פרטית ב[עיר].", "שלחי הודעה ונבדוק מה מתאים לך 👇"], ["לייזר פנים", "השערות בסנטר חוזרות כל שבוע?", "לייזר לפנים (סנטר, שפם, לחיים) ב-[מחיר] ₪ לטיפול.\nטיפול של כמה דקות, בלי סדרה מראש.\nתושבות [עיר] והסביבה.", "שלחי הודעה ונקבע 👇"], ["אפילציה", "הלייזר לא תופס את השערות הבהירות?", "אפילציה מטפלת בכל שערה בנפרד, גם בשיער לבן ובהיר.\nטיפול ראשון ב-[מחיר] ₪.\nקליניקה פרטית ב[עיר].", "שלחי תמונה של האזור לבדיקה ראשונית 👇"], ["טיפול פנים", "העור נראה עייף, גם אחרי לילה טוב?", "טיפול פנים ראשון ב-[מחיר] ₪, מותאם לסוג העור שלך.\nשעה שקטה רק בשבילך, בלי חדר המתנה.\n[עיר] והסביבה.", "שלחי הודעה ונמצא לך תור 👇"], ["ניקוי עמוק", "שום קרם לא עוזר לנקבוביות?", "ניקוי עמוק לעור עם נטייה לשומניות ולפצעונים, ב-[מחיר] ₪.\nכולל אבחון עור והמלצה לשגרה בבית.\nקליניקה ב[עיר].", "שלחי הודעה עם תמונה של העור לבדיקה 👇"], ["עיצוב גבות", "מציירת את הגבות כל בוקר?", "עיצוב גבות לפי מבנה הפנים שלך, ב-[מחיר] ₪.\nחצי שעה, ויוצאים עם גבות מסודרות וסימטריות.\n[עיר] והסביבה.", "שלחי הודעה ונקבע 👇"], ["הרמת ריסים", "ריסים מורמים בלי מסקרה, לכמה שבועות", "הרמת ריסים ב-[מחיר] ₪.\nבלי תוספות ובלי תחזוקה יומית.\nקליניקה פרטית ב[עיר].", "שלחי הודעה ונמצא תור 👇"], ["איפור קבוע", "רוצה לקום בבוקר עם גבות מוכנות?", "מיקרובליידינג ואיפור קבוע לגבות, ב-[מחיר] ₪ כולל טיפול חיזוק.\nשלחי תמונה של הגבות שלך, ואגיד לך מה אפשר לעשות לפני שמחליטים.\n[עיר] והסביבה.", "שלחי תמונה לבדיקה ראשונית 👇"], ["פיגמנטציה", "הכתמים בפנים לא יורדים גם אחרי הקיץ?", "טיפול לכתמים ולפיגמנטציה, ב-[מחיר] ₪ לטיפול.\nמתחילים באבחון, ורק אז מחליטים כמה טיפולים צריך.\nקליניקה ב[עיר].", "שלחי הודעה עם תמונה לאבחון ראשוני 👇"], ["תורים פנויים", "התפנו [מספר] תורים השבוע ב[עיר]", "[שם הטיפול] ב-[מחיר] ₪, רק לתורים שהתפנו השבוע.\n(להשתמש רק כשזה באמת נכון. לקוחות מרגישות כשמבצע \"אחרון\" חוזר כל שבוע.)", "שלחי הודעה לפני שהתורים נתפסים 👇"]],hooks=[["שאלה על כאב", "נמאס לך להתגלח כל בוקר?"], ["שבירת אמונה", "קרם יקר לא יעשה לך עור טוב."], ["אזור", "תושבות [עיר]: לייזר לכל הגוף ב-[מחיר] ₪"], ["מספר", "3 סימנים שהעור שלך צריך ניקוי עמוק"], ["\"זה לא אשמתך\"", "זה לא שהלייזר לא עובד עלייך. השערות הבהירות פשוט צריכות שיטה אחרת."], ["משפט שהלקוחה אומרת לעצמה", "\"עוד פעם שכחתי לצייר גבות לפני הזום\""], ["הורדת חשש", "טיפול ראשון בלי התחייבות לסדרה"], ["סקרנות", "מה עושות קוסמטיקאיות לעור של עצמן בחורף?"], ["תוצאה", "לצאת מהבית בלי לבדוק את הסנטר במראה"], ["דחיפות אמיתית", "התפנו 2 תורים ליום חמישי"]],replies=[["הודעת פתיחה", "היי! תודה שפנית 😊\nאני כרגע באמצע טיפול, ואחזור אלייך עד שעה.\nבינתיים, ספרי לי: איזה טיפול מעניין אותך, ובאיזה אזור את גרה?"], ["מחוץ לשעות הפעילות", "היי! קיבלתי את ההודעה שלך 🌙\nהקליניקה פתוחה ב[ימים ושעות], ואחזור אלייך מחר בבוקר.\nאם תכתבי לי עכשיו איזה טיפול מעניין אותך, אגיע מוכנה עם תורים פנויים."], ["פולואפ למחרת", "היי [שם], רק רציתי לוודא שראית את ההודעה שלי 😊\nנשארו לי [מספר] תורים פנויים השבוע. רוצה שאשריין לך אחד?"]];
+function copyBtn(t){const b=document.createElement("button");b.className="copy";b.type="button";b.textContent="העתקה";b.onclick=()=>{const d=()=>{b.textContent="הועתק ✓";setTimeout(()=>b.textContent="העתקה",1600)};if(navigator.clipboard){navigator.clipboard.writeText(t).then(d).catch(()=>{b.textContent="סמני והעתיקי ידנית"})}};return b}
 const esc=s=>s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
-const adsEl=document.getElementById("ads");
-ads.forEach(([tag,hook,body,cta])=>{const c=document.createElement("article");c.className="card";
- c.innerHTML=`<div class="card-top"><span class="tag">${esc(tag)}</span></div><p class="hook">${esc(hook)}</p><p class="body">${esc(body)}</p><span class="cta">${esc(cta)}</span>`;
- c.querySelector(".card-top").appendChild(copyBtn(`${hook}\n\n${body}\n\n${cta}`));adsEl.appendChild(c)});
-const hEl=document.getElementById("hooks");
-hooks.forEach(([t,h])=>{const li=document.createElement("li");li.innerHTML=`<small>${esc(t)}</small><span>${esc(h)}</span>`;hEl.appendChild(li)});
-const rEl=document.getElementById("replies");
-replies.forEach(([t,body])=>{const c=document.createElement("article");c.className="card";
- c.innerHTML=`<div class="card-top"><span class="tag">${esc(t)}</span></div><p class="body">${esc(body)}</p>`;
- c.querySelector(".card-top").appendChild(copyBtn(body));rEl.appendChild(c)});
+const A=document.getElementById("ads");ads.forEach(([g,h,bd,c])=>{const e=document.createElement("article");e.className="card";e.innerHTML=`<div class="card-top"><span class="tag">${esc(g)}</span></div><p class="hook">${esc(h)}</p><p class="body">${esc(bd)}</p><span class="ctaline">${esc(c)}</span>`;e.querySelector(".card-top").appendChild(copyBtn(`${h}\n\n${bd}\n\n${c}`));A.appendChild(e)});
+const H=document.getElementById("hooks");hooks.forEach(([t,h])=>{const l=document.createElement("li");l.innerHTML=`<small>${esc(t)}</small><span>${esc(h)}</span>`;H.appendChild(l)});
+const R=document.getElementById("replies");replies.forEach(([t,bd])=>{const e=document.createElement("article");e.className="card";e.innerHTML=`<div class="card-top"><span class="tag">${esc(t)}</span></div><p class="body">${esc(bd)}</p>`;e.querySelector(".card-top").appendChild(copyBtn(bd));R.appendChild(e)});
 </script>
-
 </body>
 </html>
