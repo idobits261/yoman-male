@@ -103,41 +103,167 @@ footer a{color:var(--muted-d)}
 .toc a:hover{background:var(--ink-3)}
 .bonus-label{display:inline-block;background:var(--gold-2);color:var(--gold-ink);font-weight:900;font-size:.8rem;border-radius:999px;padding:2px 12px;margin-bottom:8px}
 </style>
+<style>
+.hero{padding-top:clamp(28px,5vw,56px)}
+.eyebrow2{display:inline-block;font-size:.9rem;font-weight:800;color:var(--gold-2);border:1px solid var(--line);border-radius:999px;padding:4px 14px;margin-bottom:16px}
+.hero h1{font-size:clamp(1.9rem,5.6vw,3rem)}
+.mockrow{display:flex;gap:22px;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:22px}
+.mock{width:min(240px,70%);aspect-ratio:3/4;border-radius:8px 18px 18px 8px;background:linear-gradient(160deg,#362343,#2A1B34 55%,#170E1C);border:1px solid rgba(232,169,190,.45);box-shadow:0 30px 50px -20px rgba(0,0,0,.7),inset 6px 0 0 rgba(232,169,190,.25);padding:22px 18px;display:flex;flex-direction:column;justify-content:space-between;text-align:right;transform:rotate(-3deg)}
+.mock .t{font-family:var(--serif);font-weight:900;color:#fff;font-size:1.45rem;line-height:1.25}
+.mock .t b{display:block;color:var(--gold-2);font-size:2.6em;line-height:1}
+.mock ul{list-style:none;margin:0;padding:0;font-size:.85rem;color:var(--muted-d);border-top:1px solid var(--line);padding-top:10px;display:grid;gap:3px}
+.mock li::before{content:"✓ ";color:var(--gold-2)}
+.buy{display:flex;flex-direction:column;align-items:center;gap:10px}
+.trust{font-size:.88rem;color:var(--muted-d);display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.pain{display:grid;gap:10px;max-width:600px;margin:0 auto;text-align:right}
+.pain div{background:var(--ink-3);border-right:3px solid var(--gold-2);border-radius:10px;padding:12px 16px;color:var(--text-d)}
+.big-p{font-size:1.12rem;color:var(--text-d);max-width:600px;margin:18px auto 0;text-align:center}
+.steps3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;counter-reset:s}
+@media(max-width:620px){.steps3{grid-template-columns:1fr}}
+.steps3 div{counter-increment:s;background:var(--ink-3);border:1px solid var(--line);border-radius:16px;padding:18px;text-align:center}
+.steps3 div::before{content:counter(s);display:grid;place-items:center;width:38px;height:38px;margin:0 auto 8px;border-radius:50%;background:var(--gold-2);color:var(--gold-ink);font-family:var(--serif);font-weight:900;font-size:1.2rem}
+.steps3 strong{display:block;color:#fff;margin-bottom:4px}
+.steps3 p{margin:0;color:var(--muted-d);font-size:.95rem}
+.fit{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media(max-width:620px){.fit{grid-template-columns:1fr}}
+.fit div{background:var(--ink-3);border:1px solid var(--line);border-radius:16px;padding:18px;text-align:right}
+.fit h3{font-family:var(--serif);font-size:1.2rem;margin-bottom:8px}
+.fit ul{margin:0;padding:0 18px 0 0;display:grid;gap:6px;color:var(--text-d)}
+.fit .no h3{color:var(--muted-d)}
+.fit .no ul{color:var(--muted-d)}
+.about{max-width:620px;margin:0 auto;text-align:right;background:var(--ink-3);border:1px solid var(--line);border-radius:18px;padding:22px}
+.about p{margin:0 0 10px;color:var(--text-d)}
+.about p:last-child{margin:0}
+.sticky{position:fixed;inset:auto 0 0 0;z-index:20;background:rgba(23,14,28,.94);backdrop-filter:blur(6px);border-top:1px solid var(--line);padding:10px max(14px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(14px,env(safe-area-inset-left,0px));display:flex;align-items:center;justify-content:space-between;gap:12px;transform:translateY(110%);transition:transform .25s}
+.sticky.on{transform:none}
+.sticky b{font-family:var(--serif);color:#fff;font-size:1.3rem}
+.sticky .cta{padding:11px 22px;font-size:1rem}
+@media(min-width:900px){.sticky{display:none}}
+@media(prefers-reduced-motion:reduce){.sticky{transition:none}.mock{transform:none}}
+.pad-bottom{height:70px}
+@media(min-width:900px){.pad-bottom{display:none}}
+</style>
 </head>
 <body>
 
-<section class="sec center"><div class="wrap stack">
-<span class="brand" style="margin:0">יומן מלא</span>
-<h1>מה עובד בפרסום קליניקות,<br><span class="g">ומה לתקן אצלך</span></h1>
-<p class="lead" style="margin:0">17 מודעות אמיתיות שרצות הכי הרבה זמן, מחשבון תקציב, ובדיקה אישית של המודעה שלך.</p>
-<div class="price">97 ₪ <small>תשלום אחד</small></div>
-<a class="cta" href="https://pay.grow.link/MTA4MDA5~900c7fdc021e13784e354da46f98bb7b-NDI1MzA3Nw">לקבלת הערכה ב-97 ₪</a>
-<p class="intro" style="margin:0;font-size:.95rem">מיד אחרי התשלום את מגיעה לערכה.</p>
+<section class="sec hero center"><div class="wrap">
+<span class="eyebrow2">לקוסמטיקאיות ולבעלות קליניקות</span>
+<h1>למה המודעה של קליניקה אחת רצה כבר <span class="g">כמעט 3 שנים</span>,<br>ושלך נכבתה אחרי שבוע?</h1>
+<p class="lead">פירקתי 17 מודעות של קליניקות בישראל שרצות חודשים ושנים. בערכה תראי בדיוק מה הן עושות, תחשבי כמה מותר לך לשלם על כל פנייה, ותקבלי ממני בדיקה אישית של המודעה שלך.</p>
+<div class="mockrow">
+<div class="mock" aria-hidden="true"><div class="t"><b>17</b>מודעות שעובדות, מפורקות</div><ul><li>מחשבון תקציב</li><li>בדיקה אישית תוך 48 שעות</li><li>10 מודעות מוכנות</li></ul></div>
+<div class="buy"><div class="price">97 ₪ <small>תשלום אחד</small></div><a class="cta" href="https://pay.grow.link/MTA4MDA5~900c7fdc021e13784e354da46f98bb7b-NDI1MzA3Nw">לקבלת הערכה ב-97 ₪</a><div class="trust"><span>🔒 תשלום מאובטח ב-Grow</span><span>⚡ גישה מיידית</span></div></div>
+</div>
 </div></section>
+
+<section class="sec alt center"><div class="wrap">
+<h2>זה לא שהפרסום <span class="g">לא עובד לך</span></h2>
+<p class="intro">ברוב המקרים זו אחת משלוש שאלות שאין לך עליהן תשובה:</p>
+<div class="pain">
+<div>האם המודעה עצמה לא טובה, או שהקהל לא נכון?</div>
+<div>כמה זה "הרבה" לשלם על פנייה? מתי לכבות, ומתי לחכות עוד יום?</div>
+<div>מה כותבות קליניקות שהמודעות שלהן רצות חודשים, ולמה שלי לא נראית ככה?</div>
+</div>
+<p class="big-p">בלי תשובות, כל קמפיין הוא ניחוש. הערכה נותנת לך את שלושתן, מנתונים אמיתיים ולא מתיאוריה.</p>
+</div></section>
+
+<section class="sec"><div class="wrap">
+<div class="center"><h2>מה מצאתי ב-17 <span class="g">המודעות שרצות הכי הרבה זמן</span></h2>
+<p class="intro">מודעות פעילות בספריית המודעות של מטא, נכון ל-6.11.2026. אף קליניקה לא ממשיכה לשלם שנים על מודעה שלא מביאה לקוחות.</p></div>
+<div class="stats">
+<div><b>13/17</b><span>פונות לעיר או לאזור</span></div>
+<div><b>8/17</b><span>כותבות מחיר במודעה</span></div>
+<div><b>11/17</b><span>מובילות לוואטסאפ או להודעה</span></div>
+<div><b>7/17</b><span>מורידות חשש: בלי התחייבות או ייעוץ חינם</span></div>
+</div>
+<div class="cards"><article class="win"><div class="win-top"><span class="tag">הסרת שיער · אשקלון</span><span class="age">רצה כבר 2 שנים ו-10 חודשים</span></div><p class="qt">"רק 199 ש"ח! הסרת שיער בלייזר - אשקלון. חזה+בטן/גב+כתפיים + אזור קטן מתנה. ללא חובת התחייבות וללא תשלום מראש!"</p><div class="chips"><span class="chip">מחיר</span><span class="chip">אזור</span><span class="chip">בלי סיכון</span></div><p class="why"><b>מחיר אחד, עיר אחת, מתנה אחת.</b> אותה מודעה רצה כמעט שלוש שנים, בכמה גרסאות. הכותרת על התמונה חוזרת על המחיר והעיר.</p></article><article class="win"><div class="win-top"><span class="tag">איפור קבוע · רמת גן</span><span class="age">רצה כבר 2 שנים ו-8 חודשים</span></div><p class="qt">"הטבה לתושבות רמת גן! איפור גבות קבוע… רק ב-400₪ לטיפול. ל-10 הראשונות בלבד שמגיעות דרך מודעה זו"</p><div class="chips"><span class="chip">מחיר</span><span class="chip">אזור</span><span class="chip">וואטסאפ</span></div><p class="why"><b>אזור בשורה הראשונה, מחיר, ומגבלה אמיתית</b> (10 ראשונות). הכפתור פותח וואטסאפ, לא טופס.</p></article><article class="win"><div class="win-top"><span class="tag">הסרת שיער · ראשון לציון</span><span class="age">רצה כבר שנה ו-2 חודשים</span></div><p class="qt">"רק ב-249₪ לכל הגוף, לנשים בלבד! ללא התחייבות לסדרת טיפולים! מותאם לכל סוגי העור, כולל עור שזוף"</p><div class="chips"><span class="chip">מחיר</span><span class="chip">אזור</span><span class="chip">בלי סיכון</span><span class="chip">וואטסאפ</span></div><p class="why"><b>כל ארבעת הסימנים ביחד:</b> מחיר, אזור, בלי התחייבות, וואטסאפ. עונה מראש על "זה מתאים לעור שלי?".</p></article></div>
+<p class="intro center" style="margin-top:18px">אלה 3 מתוך 17. כל השאר, עם הניתוח, בערכה.</p>
+</div></section>
+
 <section class="sec alt"><div class="wrap">
+<div class="center"><h2>נסי את <span class="g">מחשבון התקציב</span></h2><p class="intro">אחד הכלים בערכה. הזיני את המחיר שלך וראי כמה מותר לך לשלם על פנייה.</p></div>
+<div class="calc" id="calc">
+<div class="in">
+<label for="c-price">מחיר טיפול ראשון (₪)<input id="c-price" type="number" inputmode="numeric" min="0" value="249"></label>
+<label for="c-visits">כמה טיפולים לקוחה עושה בממוצע<small>לייזר: לרוב 6–8. טיפול פנים: כמה פעמים בשנה.</small><input id="c-visits" type="number" inputmode="numeric" min="1" value="6"></label>
+<label for="c-close">מתוך 10 פניות, כמה קובעות תור<small>אם אין לך מספר, תתחילי מ-3.</small><input id="c-close" type="number" inputmode="numeric" min="0" max="10" value="3"></label>
+<label for="c-budget">תקציב פרסום ליום (₪)<input id="c-budget" type="number" inputmode="numeric" min="0" value="40"></label>
+</div>
+<div class="out">
+<div class="main"><b id="o-target">–</b><span>היעד שלך לעלות פנייה. עד הסכום הזה, הטיפול הראשון כבר מחזיר את הפרסום.</span></div>
+<div><b id="o-kill">–</b><span>מודעה שהוציאה את הסכום הזה בלי אף פנייה: לכבות</span></div>
+<div><b id="o-max">–</b><span>התקרה: מעל זה, גם לקוחה קבועה לא מחזירה את הפרסום</span></div>
+<div><b id="o-leads">–</b><span>פניות צפויות בשבוע, אם עומדים ביעד</span></div>
+<div><b id="o-clients">–</b><span>לקוחות חדשות צפויות בשבוע</span></div>
+</div>
+</div>
+<script>
+(function(){const $=i=>document.getElementById(i);const f=n=>isFinite(n)&&n>0?Math.round(n).toLocaleString('he-IL'):'–';
+function run(){const p=+$('c-price').value||0,v=Math.max(1,+$('c-visits').value||1),c=Math.min(10,Math.max(0,+$('c-close').value||0))/10,b=+$('c-budget').value||0;
+const target=p*c,max=p*v*c,leads=target>0?b*7/target:0;
+$('o-target').textContent=target>0?f(target)+' ₪':'–';$('o-kill').textContent=target>0?f(target*2)+' ₪':'–';$('o-max').textContent=max>0?f(max)+' ₪':'–';
+$('o-leads').textContent=leads>0?(leads<10?leads.toFixed(1):f(leads)):'–';const cl=leads*c;$('o-clients').textContent=cl>0?(cl<10?cl.toFixed(1):f(cl)):'–'}
+['c-price','c-visits','c-close','c-budget'].forEach(i=>$(i).addEventListener('input',run));run()})();
+</script>
+</div></section>
+
+<section class="sec"><div class="wrap">
 <div class="center"><h2>מה <span class="g">בערכה</span></h2></div>
 <div class="feat">
-<div><b>17</b><strong>מודעות שעובדות, מפורקות</strong><p>מודעות אמיתיות של קליניקות בישראל שרצות חודשים ושנים, ולמה כל אחת עובדת.</p></div>
-<div><b>₪</b><strong>מחשבון תקציב</strong><p>כמה מותר לך לשלם על פנייה, ומתי לכבות מודעה. לפי המחיר והלקוחות שלך.</p></div>
-<div><b>48</b><strong>שעות לבדיקה אישית</strong><p>שולחת לי צילום מסך של המודעה, ומקבלת 3 תיקונים מדויקים לקליניקה שלך.</p></div>
-<div><b>+</b><strong>בונוס: מודעות מוכנות</strong><p>10 מודעות לפי טיפול, 10 הוקים, הודעות מענה אוטומטי וצ'קליסט של 10 צעדים.</p></div>
-</div></div></section>
-<section class="sec"><div class="wrap">
-<div class="center"><h2>טעימה <span class="g">מהניתוח</span></h2><p class="intro">אחת מתוך ה-17. בערכה כל השאר, ומה משותף לכולן.</p></div>
-<article class="win"><div class="win-top"><span class="tag">הסרת שיער · אשקלון</span><span class="age">רצה כבר 2 שנים ו-10 חודשים</span></div><p class="qt">"רק 199 ש"ח! הסרת שיער בלייזר - אשקלון. חזה+בטן/גב+כתפיים + אזור קטן מתנה. ללא חובת התחייבות וללא תשלום מראש!"</p><div class="chips"><span class="chip">מחיר</span><span class="chip">אזור</span><span class="chip">בלי סיכון</span></div><p class="why"><b>מחיר אחד, עיר אחת, מתנה אחת.</b> אותה מודעה רצה כמעט שלוש שנים, בכמה גרסאות. הכותרת על התמונה חוזרת על המחיר והעיר.</p></article>
+<div><b>17</b><strong>מודעות שעובדות, מפורקות</strong><p>מודעות אמיתיות של קליניקות שרצות חודשים ושנים: מה ההצעה, איך הן פונות לאזור, מה מוריד את החשש, ולמה זה עובד.</p></div>
+<div><b>₪</b><strong>מחשבון תקציב</strong><p>כמה מותר לך לשלם על פנייה, מתי לכבות מודעה, וכמה לקוחות לצפות בשבוע מהתקציב שלך.</p></div>
+<div><b>48</b><strong>שעות לבדיקה אישית</strong><p>שולחת לי צילום מסך של המודעה, ומקבלת ממני 3 תיקונים מדויקים לקליניקה שלך. בכתב, בלי שיחה.</p></div>
+<div><b>+</b><strong>בונוס: ערכת הפעלה</strong><p>10 מודעות מוכנות לפי טיפול, 10 הוקים להחלפה, הודעות מענה אוטומטי לוואטסאפ, וצ'קליסט של 10 צעדים.</p></div>
+</div>
+<div class="buy" style="margin-top:26px"><a class="cta" href="https://pay.grow.link/MTA4MDA5~900c7fdc021e13784e354da46f98bb7b-NDI1MzA3Nw">לקבלת הערכה ב-97 ₪</a></div>
 </div></section>
+
 <section class="sec alt"><div class="wrap">
+<div class="center"><h2>איך עובדת <span class="g">הבדיקה האישית</span></h2></div>
+<div class="steps3">
+<div><strong>רוכשת את הערכה</strong><p>ומקבלת גישה מיד, עם כל ההוראות.</p></div>
+<div><strong>שולחת לי צילום מסך</strong><p>של המודעה, עם הטיפול, המחיר והאזור.</p></div>
+<div><strong>מקבלת 3 תיקונים</strong><p>במייל, תוך 48 שעות בימי עבודה.</p></div>
+</div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+<div class="fit">
+<div><h3>מתאים לך אם</h3><ul><li>יש לך קליניקה או מכון, ואת רוצה יותר תורים מפרסום</li><li>כבר ניסית לפרסם ולא ברור לך למה זה לא עבד</li><li>או שאת רוצה להתחיל נכון, בלי לשרוף תקציב על ניסוי וטעייה</li></ul></div>
+<div class="no"><h3>לא מתאים לך אם</h3><ul><li>את רוצה שמישהו אחר יבנה וינהל לך הכול (בשביל זה יש את "30 יום ליומן מלא")</li><li>את לא מתכננת לפרסם בפייסבוק או באינסטגרם</li></ul></div>
+</div>
+</div></section>
+
+<section class="sec alt"><div class="wrap">
+<div class="center"><h2>מי <span class="g">כתב</span></h2></div>
+<div class="about">
+<p>אני עידו. אני בונה לקליניקות קמפיינים בפייסבוק ובאינסטגרם, ומענה אוטומטי לפניות.</p>
+<p>לפני שכתבתי את הערכה עברתי על כ-1,400 מודעות פעילות של קוסמטיקאיות בישראל, וחיפשתי את אלה שממשיכות לרוץ. כי מודעה שרצה חודשים היא מודעה שמביאה לקוחות.</p>
+<p>הערכה היא מה שמצאתי שם, מסודר כך שתוכלי ליישם לבד. והבדיקה האישית היא בשביל החלק שקשה לראות לבד: מה בדיוק לתקן אצלך.</p>
+</div>
+</div></section>
+
+<section class="sec"><div class="wrap">
 <div class="center"><h2>שאלות <span class="g">נפוצות</span></h2></div>
 <details><summary>מה זו הבדיקה האישית?</summary><p>אחרי הרכישה את שולחת לי למייל צילום מסך של המודעה שלך, מה הטיפול וכמה הוא עולה. תוך 48 שעות בימי עבודה את מקבלת ממני 3 תיקונים, בכתב. בלי שיחה. בדיקה אחת לכל רכישה.</p></details>
 <details><summary>אף פעם לא פרסמתי. זה מתאים לי?</summary><p>כן. יש צ'קליסט של 10 צעדים להעלאת הקמפיין הראשון ומודעות מוכנות. ואת הבדיקה האישית אפשר לעשות על המודעה הראשונה שלך, לפני שהיא עולה.</p></details>
 <details><summary>איך אני מקבלת את הערכה?</summary><p>מיד אחרי התשלום את מועברת לעמוד הערכה. שמרי את הקישור, כדי לחזור אליו מתי שתרצי.</p></details>
-<details><summary>ואם אני רוצה שמישהו יעשה את זה בשבילי?</summary><p>בשביל זה יש את "30 יום ליומן מלא": אני בונה ומנהל לך את הקמפיין. עני "יומן מלא" לאחד המיילים שלי.</p></details>
+<details><summary>למה בדף התשלום כתוב "אטלס"?</summary><p>התשלום עובר בדף מאובטח של Grow, בשם העסק הרשום שלי. "יומן מלא" הוא שם השירות.</p></details>
+<details><summary>ואם אני רוצה שמישהו יעשה את זה בשבילי?</summary><p>בשביל זה יש את "30 יום ליומן מלא": אני בונה ומנהל לך את הקמפיין. כתבי לי ל-ido@yoman-male.com.</p></details>
 </div></section>
-<section class="sec center"><div class="wrap stack">
-<h2>מוכנה <span class="g">להתחיל?</span></h2>
+
+<section class="sec alt center"><div class="wrap stack">
+<h2>אם הגעת עד לכאן</h2>
+<p class="intro" style="margin:0">כנראה שהפרסום חשוב לך, ואת לא רוצה להמשיך לנחש. בשביל 97 ₪ תדעי מה עובד אצל אחרות, כמה מותר לך לשלם, ומה לתקן אצלך.</p>
 <div class="price">97 ₪</div>
 <a class="cta" href="https://pay.grow.link/MTA4MDA5~900c7fdc021e13784e354da46f98bb7b-NDI1MzA3Nw">לקבלת הערכה ב-97 ₪</a>
+<div class="trust"><span>🔒 תשלום מאובטח ב-Grow</span><span>⚡ גישה מיידית</span></div>
 </div></section>
+<div class="pad-bottom"></div>
 <footer>יומן מלא – עידו ביטון · עוסק מורשה 200352623 · <a href="https://yoman-male.com/#terms">תקנון</a> · <a href="https://yoman-male.com/#privacy">מדיניות פרטיות</a></footer>
+<div class="sticky" id="sticky"><b>97 ₪</b><a class="cta" href="https://pay.grow.link/MTA4MDA5~900c7fdc021e13784e354da46f98bb7b-NDI1MzA3Nw">לקבלת הערכה ב-97 ₪</a></div>
+<script>
+(function(){var s=document.getElementById('sticky');function f(){s.classList.toggle('on',window.scrollY>500)}window.addEventListener('scroll',f,{passive:true});f()})();
+</script>
 </body>
 </html>
